@@ -68,8 +68,8 @@ class LatexCalendar(calendar.Calendar):
                     first = False
                     continue
 
-                date,name,special=line.strip().split(',')
-                d,m,_ = map(int, date.split('/'))
+                name,date,special=line.strip().split(',')
+                m,d,_ = map(int, date.split('/'))
 
                 if (m in self.data.keys() and d in self.data[m].keys()):
                     self.data[m][d].append((name, special))
