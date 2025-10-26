@@ -62,12 +62,7 @@ class LatexCalendar(calendar.Calendar):
             self.data[i]=dict()
 
         with open(filename) as datafile:
-            first = True
             for line in datafile:
-                if first:
-                    first = False
-                    continue
-
                 if len(line.strip()) == 0 :
                     continue
 
