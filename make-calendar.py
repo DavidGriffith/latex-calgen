@@ -68,6 +68,12 @@ class LatexCalendar(calendar.Calendar):
                     first = False
                     continue
 
+                if len(line.strip()) == 0 :
+                    continue
+
+                if line in ['\n', '\r\n']:
+                    continue
+
                 name,date,special=line.strip().split(',')
                 m,d,_ = map(int, date.split('/'))
 
