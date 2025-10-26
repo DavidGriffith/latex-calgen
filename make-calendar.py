@@ -74,6 +74,10 @@ class LatexCalendar(calendar.Calendar):
                 if line in ['\n', '\r\n']:
                     continue
 
+                line = line.split('#',1)[0].strip()
+                if not line:
+                    continue
+
                 name,date,special=line.strip().split(',')
                 m,d,_ = map(int, date.split('/'))
 
